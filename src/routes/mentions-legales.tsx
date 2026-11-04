@@ -1,0 +1,12 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { seo } from "@/lib/seo";
+import { SITE } from "@/lib/site";
+import { LegalPage } from "@/components/site/LegalPage";
+export const Route = createFileRoute("/mentions-legales")({ head: () => seo("Mentions légales", "Éditeur, hébergement et conditions d’utilisation du site d’Igor Godonou."), component: Page });
+function Page() { return <LegalPage title="Mentions légales" intro="Les informations connues sur l’éditeur et les limites d’utilisation du site." sections={[
+  { title: "Éditeur du site", paragraphs: [`Responsable du contenu : Igor Godonou, Bénin. Contact : ${SITE.email}. Téléphone : ${SITE.phoneDisplay}. Domaine prévu : igorgodonou.com.`, "Informations officielles à compléter avant publication : statut juridique, adresse professionnelle complète, dénomination de l’entreprise si applicable, numéro d’immatriculation et identifiant fiscal si requis. Ces informations n’ont pas été fournies et ne sont pas inventées."] },
+  { title: "Hébergement", paragraphs: ["Le site est hébergée sur vercel (vercel.com)."] },
+  { title: "Contenus et propriété intellectuelle", paragraphs: ["Les textes et visuels sont présentés pour informer sur le parcours et les offres d’Igor. Toute réutilisation doit respecter les droits applicables et, lorsqu’elle le nécessite, obtenir l’autorisation du titulaire. Les marques Binance, Bybit et les autres services cités appartiennent à leurs titulaires ; leur mention ne signifie pas un partenariat ni une certification."] },
+  { title: "Portée des informations", paragraphs: ["Les formations sont pédagogiques. Les contenus ne constituent ni un conseil en investissement, ni un conseil juridique ou fiscal personnalisé. Aucun gain, client, volume de ventes ou résultat publicitaire n’est garanti. Un chiffre d’affaires n’est pas un bénéfice.", "Les cryptoactifs peuvent entraîner une perte partielle ou totale du capital. Les règles des plateformes, frais et obligations locales peuvent évoluer ; vérifiez les informations auprès des services et autorités concernés."] },
+  { title: "Disponibilité et services externes", paragraphs: ["L’accès au site et la transmission des formulaires dépendent de services techniques et ne peuvent être garantis sans interruption. Une réussite n’est affichée qu’après la réponse positive de Web3Forms. En cas de difficulté, contactez Igor directement.", "Les sites externes accessibles par lien disposent de leurs propres règles. Aucun paiement en ligne ni collecte de données bancaires n’a lieu sur ce site."] },
+]} />; }
